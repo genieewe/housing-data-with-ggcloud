@@ -24,7 +24,7 @@ This project was built to demonstrate containerized orchestration, secure cloud 
 
 1. Clone this repository:
    ```bash
-   git clone [https://github.com/genieewe/housing-data-with-ggcloud](https://github.com/genieewe/housing-data-with-ggcloud)
+   git clone [https://github.com/genieewe/housing-data-with-ggcloud](https://github.com/your-username/tokyo-housing-data-pipeline.git)
 
 2. Place your Google Cloud Service Account key in the /dags directory as gcp-key.json. (This is important because Airflow gotta reach your key)
 
