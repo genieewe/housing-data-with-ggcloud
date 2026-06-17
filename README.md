@@ -24,5 +24,14 @@ This project was built to demonstrate containerized orchestration, secure cloud 
 
 1. Clone this repository:
    ```bash
-   git clone [https://github.com/your-username/tokyo-housing-data-pipeline.git](https://github.com/your-username/tokyo-housing-data-pipeline.git)
+   git clone [https://github.com/genieewe/housing-data-with-ggcloud](https://github.com/genieewe/housing-data-with-ggcloud)
 
+2. Place your Google Cloud Service Account key in the /dags directory as gcp-key.json. (This is important because Airflow gotta reach your key)
+
+3. Run this command in your Terminal to start Airflow server:
+"docker compose up --build -d"
+
+4. Navigate to http://localhost:8080, find and unpause the DAG named housing_data_pipeline, triggering the pipeline.
+Note: If it throws a "This page isn't working", wait for 3-5 mins and reload
+
+5. Open dashboard.ipynb to execute the visualization queries against the finalized BigQuery tables.

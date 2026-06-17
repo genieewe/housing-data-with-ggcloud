@@ -12,7 +12,7 @@ default_args = {
 }
 
 with DAG (
-    dag_id = 'tokyo_housing_data_pipeline',
+    dag_id = 'housing_data_pipeline',
     description = 'Daily automated ELT for Japan share house price',
     default_args = default_args,
     schedule = '@daily',
