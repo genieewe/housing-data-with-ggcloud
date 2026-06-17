@@ -1,0 +1,11 @@
+venv/
+.venv/
+
+gcp-key.json
+*.json
+
+*.csv
+*.parquet
+
+__pycache__/
+logs/
