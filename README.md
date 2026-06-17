@@ -12,10 +12,10 @@ This project was built to demonstrate containerized orchestration, secure cloud 
 * **Architecture Pattern:** Medallion (Bronze -> Silver -> Gold)
 * **Environment:** GitHub Codespaces / Jupyter Notebooks
 
-## Key Engineering Decisions
-* **Memory-Safe Ingestion:** Instead of loading the entire raw dataset into local RAM using Pandas, the extraction layer utilizes native BigQuery streaming. This ensures the pipeline remains stable and scalable regardless of host hardware limitations.
-* **Idempotent Data Layers:** The Bronze layer utilizes `WRITE_TRUNCATE` configurations, ensuring that daily Airflow runs are perfectly idempotent and do not create duplicate records.
-* **Decoupled Visualization:** By storing the finalized "Gold" data in BigQuery, the backend architecture is completely decoupled from the presentation layer. The final business insights are rendered efficiently via cloud-executed Jupyter Notebooks.
+## Key Decisions
+* **Memory-Safe Ingestion:** Instead of loading the entire raw dataset into local RAM using Pandas, the extraction layer uses BigQuery streaming. This ensures the pipeline remains stable and scalable regardless of host hardware limitations.
+* **Idempotent Data:** The Bronze layer uses `WRITE_TRUNCATE`, ensuring that daily Airflow runs are perfectly idempotent and do not create duplicate records.
+* **Decoupled Visualization:** By storing the finalized "Gold" data in BigQuery, the backend architecture is completely separated from the presentation layer. The final business insights are generated solely via cloud-executed Jupyter Notebooks.
 
 ## Presentation Layer
 ![Example of share house rent fee data from Kaggle](tokyo_rent_analysis.png)
@@ -24,7 +24,7 @@ This project was built to demonstrate containerized orchestration, secure cloud 
 
 1. Clone this repository:
    ```bash
-   git clone [https://github.com/genieewe/housing-data-with-ggcloud](https://github.com/your-username/tokyo-housing-data-pipeline.git)
+   git clone [https://github.com/genieewe/housing-data-with-ggcloud](https://github.com/genieewe/housing-data-with-ggcloud))
 
 2. Place your Google Cloud Service Account key in the /dags directory as gcp-key.json. (This is important because Airflow gotta reach your key)
 
